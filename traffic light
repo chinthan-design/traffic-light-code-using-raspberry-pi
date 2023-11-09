@@ -1,0 +1,26 @@
+import Rpi.GPIO as GPIO
+import time
+red=8
+yellow=22
+green=26
+
+
+GPIO.setmode (GPIO.BOARD)
+GPIO.setwarnings (False)
+GPIO.Setup(red,GPIO.OUT,initial=GPIO.LOW)
+GPIO.Setup(yellow,GPIO.OUT,initial=GPIO.LOW)
+GPIO.Setup(green,GPIO.OUT,initial=GPIO.LOW)
+
+while True:
+      GPIO.output(red,GPIO.HIGH)
+      GPIO.output(yellow,GPIO.LOW)
+      GPIO.output(green,GPIO.LOW)
+      time.sleep(0.5)
+      GPIO.output(red,GPIO.LOW)
+      GPIO.output(yellow,GPIO.HIGH)
+      GPIO.output(green,GPIO.LOW)
+      time.sleep(0.5)
+      GPIO.output(red,GPIO.LOW)
+      GPIO.output(yellow,GPIO.LOW)
+      GPIO.output(green,GPIO.HIGH)
+      time.sleep(0.5)
